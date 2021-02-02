@@ -14,11 +14,15 @@ using Microsoft.OpenApi.Models;
 using ProgressFit.API.Helpers;
 using ProgressFit.Data;
 using ProgressFit.Data.Entities;
+using ProgressFit.Data.Repositories;
 using System;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProgressFit.Domain.Services.Contracts;
+using ProgressFit.Domain.Services;
 
 namespace ProgressFit.API
 {
@@ -77,7 +81,10 @@ namespace ProgressFit.API
                         ClockSkew = TimeSpan.Zero }; 
                 });
 
-
+            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IRepository<AppUserSetting>, AppUserSettingRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IAppUserSettingService, AppUserSettingService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

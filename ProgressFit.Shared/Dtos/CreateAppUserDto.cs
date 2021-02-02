@@ -10,5 +10,7 @@ namespace ProgressFit.Shared.Dtos
         public AppUserSettingRequest AppUserSettings { get; set; }
 
         public CreateAppUserRequest AppUser { get; set; }
+
+        public bool Tos { get; set; }
     }
 }

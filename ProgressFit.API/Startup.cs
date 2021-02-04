@@ -23,6 +23,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProgressFit.Domain.Services.Contracts;
 using ProgressFit.Domain.Services;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace ProgressFit.API
 {
@@ -82,9 +83,16 @@ namespace ProgressFit.API
                 });
 
             services.AddAutoMapper(typeof(Startup));
+            services.AddLogging();
             services.AddScoped<IRepository<AppUserSetting>, AppUserSettingRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAppUserSettingService, AppUserSettingService>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IDailyDietService, DailyDietService>();
+            services.AddScoped<IDietService, DietService>();
+            services.AddScoped<ITosService, TosService>();
+            services.AddScoped<ITokenManager, TokenManager>();
+            services.AddScoped<IMemoryCache, MemoryCache>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

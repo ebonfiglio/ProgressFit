@@ -22,7 +22,7 @@ namespace ProgressFit.Domain.Services
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<AppUserSettingResponse> AddAsync(AppUserSettingRequest request)
+        public async Task<AppUserSettingResponse> AddAsync(CreateAppUserSettingRequest request)
         {
             var entity = _mapper.Map<AppUserSetting>(request);
             var result = await _unitOfWork.AppUserSettingRepository.Add(entity);

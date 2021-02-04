@@ -29,7 +29,7 @@ namespace ProgressFit.Domain.Services
         private readonly IMapper _mapper;
         private readonly IPasswordHasher<AppUser> _passwordHasher;
         private readonly ILogger _logger;
-        public AuthService(IOptions<AppSettings> appSettings, IUnitOfWork unitOfWork, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IMapper mapper, IPasswordHasher<AppUser> passwordHasher, ILogger logger)
+        public AuthService(IOptions<AppSettings> appSettings, IUnitOfWork unitOfWork, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IMapper mapper, IPasswordHasher<AppUser> passwordHasher, ILogger<AuthService> logger)
         {
             _appSettings = appSettings.Value;
             _unitOfWork = unitOfWork;

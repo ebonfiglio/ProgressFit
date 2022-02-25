@@ -23,7 +23,7 @@ namespace ProgressFit.Shared.Requests
 
         [Required]
         [MinLength(6)]
-        [Compare(nameof(Email), ErrorMessage = "Password mismatch")]
+        [Compare(nameof(Password), ErrorMessage = "Password mismatch")]
         public string ConfirmPassword { get; set; }
     }
 }

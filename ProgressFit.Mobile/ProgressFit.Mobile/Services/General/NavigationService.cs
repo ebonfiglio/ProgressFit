@@ -101,7 +101,7 @@ namespace ProgressFit.Mobile.Services.General
         {
             Page page = CreateAndBindPage(viewModelType, parameter);
 
-            //if (page is MainPage)// || page is RegistrationView)
+            //if (page is MainPage || page is RegistrationPage)
             //{
             //    CurrentApplication.MainPage = page;
             //}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgressFit.Mobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,16 +16,7 @@ namespace ProgressFit.Mobile.Pages
         public LoginPage()
         {
             InitializeComponent();
-        }
-
-        private void Login_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Registration_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new RegistrationPage());
+            this.BindingContext = new LoginPageViewModel();
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Mobile.ViewModels
 {
-    internal class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
             //protected readonly IConnectionService _connectionService;
             protected readonly INavigationService _navigationService;

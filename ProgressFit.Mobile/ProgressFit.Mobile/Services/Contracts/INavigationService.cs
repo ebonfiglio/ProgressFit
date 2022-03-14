@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Mobile.Services.Contracts
 {
-    internal interface INavigationService
+    public interface INavigationService
     {
         Task InitializeAsync();
 

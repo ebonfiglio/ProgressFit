@@ -33,8 +33,8 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="4*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" Text="Login" StyleClass="MainButtonClass" Clicked="Login_Clicked"></Button>
-                <Button Grid.Row="1" Text="Register" StyleClass="MainButtonClass" Clicked="Registration_Clicked"></Button>
+                <Button Grid.Row="0" Text="Login" StyleClass="MainButtonClass" Command="{Binding LoginCommand}"></Button>
+                <Button Grid.Row="1" Text="Register" StyleClass="MainButtonClass"></Button>
             </Grid>
         </Grid>
 

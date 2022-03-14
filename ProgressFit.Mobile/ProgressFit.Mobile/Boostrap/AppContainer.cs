@@ -17,11 +17,11 @@ namespace ProgressFit.Mobile.Boostrap
             var builder = new ContainerBuilder();
 
             //ViewModels
-            builder.RegisterType<LoginPageViewModel>();
+            //builder.RegisterType<LoginPageViewModel>();
 
             //services
             //builder.RegisterType<ConnectionService>().As<IConnectionService>();
-            builder.RegisterType<NavigationService>().As<INavigationService>();
+            //builder.RegisterType<NavigationService>().As<INavigationService>();
             //builder.RegisterType<AuthenticationService>().As<IAuthenticationService>();
             //builder.RegisterType<DialogService>().As<IDialogService>();
             //builder.RegisterType<SettingsService>().As<ISettingsService>().SingleInstance();

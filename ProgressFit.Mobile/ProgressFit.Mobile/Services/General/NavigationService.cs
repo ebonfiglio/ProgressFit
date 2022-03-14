@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace ProgressFit.Mobile.Services.General
 {
-    internal class NavigationService : INavigationService
+    public class NavigationService : INavigationService
     {
         //private readonly IAuthenticationService _authenticationService;
         private readonly Dictionary<Type, Type> _mappings;
@@ -34,7 +34,7 @@ namespace ProgressFit.Mobile.Services.General
             }
             else
             {
-                await NavigateToAsync<LoginPageViewModel>();
+                await new Task(() => { }); //NavigateToAsync<LoginPageViewModel>();
             }
 
         }

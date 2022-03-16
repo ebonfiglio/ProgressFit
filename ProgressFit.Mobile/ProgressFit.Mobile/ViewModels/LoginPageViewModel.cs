@@ -29,7 +29,9 @@ namespace ProgressFit.Mobile.ViewModels
                 ClientId = "interactive.public",
                 Scope = "openid, profile, username",
                 RedirectUri = "xamarinformsclients://callback",
-                Browser = browser
+                Browser = browser,
+                BackchannelHandler = DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler()
+
             };
 
             _client = new OidcClient(options);

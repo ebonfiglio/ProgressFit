@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
 
@@ -23,19 +24,25 @@ namespace ProgressFit.Identity
         public static IEnumerable<Client> Clients =>
             new Client[]
             {
-                new Client
+                 new Client
                 {
                     ClientId = "xamarin",
                     AllowedGrantTypes = GrantTypes.Code,
-                    RequireClientSecret = false,
                     RequirePkce = true,
+                    RequireClientSecret = false,
+
                     RedirectUris = { "xamarinformsclients://callback" },
-                    PostLogoutRedirectUris = { "https://localhost:44337/authentication/logout-callback" },
-                    AllowOfflineAccess = true,
-                    AllowedScopes = { "openid", "profile", "username" },
+                    //FrontChannelLogoutUri = "https://localhost:44300/signout-oidc",
+                    //PostLogoutRedirectUris = { "https://localhost:44300/signout-callback-oidc" },
                     AllowAccessTokensViaBrowser = true,
-                    RequireConsent = false
-                },
+                    RequireConsent = false,
+                    AllowOfflineAccess = true,
+                    AllowedScopes = { IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.OfflineAccess
+                        //,"treater-api"
+                    }
+                }
             };
     }
 }

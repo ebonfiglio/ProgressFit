@@ -23,11 +23,7 @@ namespace ProgressFit.Mobile.Droid
             HttpClientHandler handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
             {
-                if (cert.Issuer.Equals("EN-localhost"))
-                {
-                    return true;
-                }
-                return errors == System.Net.Security.SslPolicyErrors.None;
+                return cert.Issuer.Equals("CN=localhost") ? true : errors == System.Net.Security.SslPolicyErrors.None;
             };
             return handler;
         }

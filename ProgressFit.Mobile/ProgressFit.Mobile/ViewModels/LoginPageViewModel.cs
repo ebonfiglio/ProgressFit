@@ -27,12 +27,10 @@ namespace ProgressFit.Mobile.ViewModels
             {
                 Authority = "https://10.0.2.2:5001",
                 ClientId = "xamarin",
-                Scope = "openid, profile, username",
+                Scope = "openid profile offline_access",
                 RedirectUri = "xamarinformsclients://callback",
                 Browser = browser,
-                BackchannelHandler = DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler(),
-                ResponseMode = OidcClientOptions.AuthorizeResponseMode.Redirect
-
+                BackchannelHandler = DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler()
             };
 
             _client = new OidcClient(options);

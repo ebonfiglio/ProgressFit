@@ -55,32 +55,9 @@ namespace ProgressFit.API
 
             builder = new IdentityBuilder(builder.UserType, builder.Services);
             builder.AddSignInManager<SignInManager<AppUser>>();
+            builder.AddDefaultTokenProviders();
 
-            var jwtSection = Configuration.GetSection("JwtBearerTokenSettings"); 
-            services.Configure<AppSettings>(jwtSection); 
-            var jwtBearerTokenSettings = jwtSection.Get<AppSettings>(); 
-            var key = Encoding.ASCII.GetBytes(jwtBearerTokenSettings.SecretKey);
-
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-                .AddJwtBearer(options => 
-                { 
-                    options.RequireHttpsMetadata = false; 
-                    options.SaveToken = true; 
-                    options.TokenValidationParameters = new TokenValidationParameters() 
-                    { 
-                        ValidateIssuer = true, 
-                        ValidIssuer = jwtBearerTokenSettings.Issuer, 
-                        ValidateAudience = true, 
-                        ValidAudience = jwtBearerTokenSettings.Audience, 
-                        ValidateIssuerSigningKey = true, 
-                        IssuerSigningKey = new SymmetricSecurityKey(key), 
-                        ValidateLifetime = true, 
-                        ClockSkew = TimeSpan.Zero }; 
-                });
+            services.AddAuthenticationCore();
 
             services.AddAutoMapper(typeof(Startup));
             services.AddLogging();
@@ -94,6 +71,15 @@ namespace ProgressFit.API
             services.AddScoped<ITokenManager, TokenManager>();
             services.AddScoped<IMemoryCache, MemoryCache>();
             services.AddControllers();
+
+            services.AddAuthentication("Bearer")
+               .AddIdentityServerAuthentication(options =>
+               {
+                   options.ApiName = "progressfit-api";
+                   options.Authority = "https://10.0.2.2:5001";
+                   options.RequireHttpsMetadata = false;
+               });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProgressFit.API", Version = "v1" });
@@ -123,10 +109,13 @@ namespace ProgressFit.API
 
             app.UseAuthorization();
 
+            //app.UseMiddleware<ErrorHandlerMiddleware>();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }

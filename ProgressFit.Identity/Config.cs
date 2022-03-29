@@ -18,8 +18,10 @@ namespace ProgressFit.Identity
                    };
 
         public static IEnumerable<ApiScope> ApiScopes =>
-            new ApiScope[]
-            { };
+             new ApiScope[]
+             {
+                new ApiScope("progressfit-api"),
+             };
 
         public static IEnumerable<Client> Clients =>
             new Client[]
@@ -30,7 +32,6 @@ namespace ProgressFit.Identity
                     AllowedGrantTypes = GrantTypes.Code,
                     RequirePkce = true,
                     RequireClientSecret = false,
-
                     RedirectUris = { "xamarinformsclients://callback" },
                     //FrontChannelLogoutUri = "https://localhost:44300/signout-oidc",
                     //PostLogoutRedirectUris = { "https://localhost:44300/signout-callback-oidc" },
@@ -38,9 +39,7 @@ namespace ProgressFit.Identity
                     RequireConsent = false,
                     AllowOfflineAccess = true,
                     AllowedScopes = { IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.OfflineAccess
-                        //,"treater-api"
+                        IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess
                     }
                 }
             };

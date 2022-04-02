@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using ProgressFit.Data;
 using ProgressFit.Domain.Services.Contracts;
-using ProgressFit.Shared.Responses;
+using ProgressFit.Shared.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Text;

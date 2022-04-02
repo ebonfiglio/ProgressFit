@@ -9,8 +9,8 @@ using ProgressFit.Data.Entities;
 using ProgressFit.Data.Repositories;
 using ProgressFit.Domain.Services.Contracts;
 using ProgressFit.Shared.Helpers;
-using ProgressFit.Shared.Requests;
-using ProgressFit.Shared.Responses;
+using ProgressFit.Shared.Models.Requests;
+using ProgressFit.Shared.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -86,13 +86,13 @@ namespace ProgressFit.Domain.Services
        .Replace("=", string.Empty)
        .Replace("/", string.Empty);
             loginResponse.Token.RefreshToken = refreshToken;
-            await _unitOfWork.RefreshTokenRepository.Add(new RefreshToken { UserId = user.Id, Token = refreshToken });
+            //await _unitOfWork.RefreshTokenRepository.Add(new RefreshToken { UserId = user.Id, Token = refreshToken });
             return loginResponse;
         }
 
         public async Task<AuthToken> RefreshAccessToken(string token)
         {
-            var refreshToken = await _unitOfWork.RefreshTokenRepository.Get(token);
+            var refreshToken = new RefreshToken(); //await _unitOfWork.RefreshTokenRepository.Get(token);
             if (refreshToken == null)
             {
                 throw new Exception("Refresh token was not found.");
@@ -108,7 +108,7 @@ namespace ProgressFit.Domain.Services
             return jwt;
         }
 
-        public async Task<AuthenticationResponse> Register(CreateAppUserRequest request)
+        public async Task<AuthenticationResponse> Register(RegistrationRequest request)
         {
 
             var userToCreate = _mapper.Map<AppUser>(request);
@@ -135,7 +135,7 @@ namespace ProgressFit.Domain.Services
 
         public async Task RevokeRefreshToken(string token)
         {
-            var refreshToken = await _unitOfWork.RefreshTokenRepository.Get(token);
+            var refreshToken = new RefreshToken();// await _unitOfWork.RefreshTokenRepository.Get(token);
             if (refreshToken == null)
             {
                 throw new Exception("Refresh token was not found.");

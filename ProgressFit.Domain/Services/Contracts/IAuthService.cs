@@ -1,7 +1,7 @@
 ﻿using Microsoft.IdentityModel.JsonWebTokens;
 using ProgressFit.Data.Entities;
-using ProgressFit.Shared.Requests;
-using ProgressFit.Shared.Responses;
+using ProgressFit.Shared.Models.Requests;
+using ProgressFit.Shared.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +17,6 @@ namespace ProgressFit.Domain.Services.Contracts
 
         Task<AuthenticationResponse> Login(AuthenticationRequest request);
 
-        Task<AuthenticationResponse> Register(CreateAppUserRequest request);
+        Task<AuthenticationResponse> Register(RegistrationRequest request);
     }
 }

@@ -15,8 +15,6 @@ namespace ProgressFit.Data
 
         IRepository<AppUserSetting> AppUserSettingRepository { get; }
 
-        IRepository<RefreshToken> RefreshTokenRepository { get; }
-
         IRepository<Tos> TosRepository { get; }
 
         Task SaveChanges();
@@ -66,19 +64,6 @@ namespace ProgressFit.Data
                     appUserSettingRepository = new AppUserSettingRepository(context);
                 }
                 return appUserSettingRepository;
-            }
-        }
-
-        private IRepository<RefreshToken> refreshTokenRepository;
-        public IRepository<RefreshToken> RefreshTokenRepository
-        {
-            get
-            {
-                if (refreshTokenRepository == null)
-                {
-                    refreshTokenRepository = new RefreshTokenRepository(context);
-                }
-                return refreshTokenRepository;
             }
         }
 

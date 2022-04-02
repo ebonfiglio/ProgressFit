@@ -69,8 +69,7 @@ namespace ProgressFit.Mobile.ViewModels
 
         private async void OnRegister()
         {
-
-            var result = await _apiClient.Value.GetAsync("api/test");
+            var result = await _apiClient.Value.GetAsync("account/register");
 
             if (result.IsSuccessStatusCode)
             {

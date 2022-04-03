@@ -12,14 +12,14 @@ using System.ComponentModel;
 
 namespace ProgressFit.Mobile.ViewModels
 {
-    public class LoginPageViewModel : INotifyPropertyChanged//: ViewModelBase
+    public class LoginPageViewModel : ViewModelBase
     {
         OidcClient _client;
         LoginResult _result;
 
         Lazy<HttpClient> _apiClient = new Lazy<HttpClient>(() => new HttpClient(DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler()));
 
-        public LoginPageViewModel()//INavigationService navigationService) : base(navigationService)
+        public LoginPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             var browser = DependencyService.Get<IBrowser>();
 
@@ -40,8 +40,6 @@ namespace ProgressFit.Mobile.ViewModels
         public ICommand LoginCommand => new Command(OnLogin);
 
         public ICommand RegisterCommand => new Command(OnRegister);
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private async void OnLogin()
         {

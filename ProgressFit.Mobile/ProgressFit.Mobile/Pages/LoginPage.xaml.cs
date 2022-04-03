@@ -16,7 +16,6 @@ namespace ProgressFit.Mobile.Pages
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginPageViewModel();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace ProgressFit.Mobile.ViewModels
             protected readonly INavigationService _navigationService;
             //protected readonly IDialogService _dialogService;
 
-            public ViewModelBase( INavigationService navigationService)
+            public ViewModelBase(INavigationService navigationService)
             {
                // _connectionService = connectionService;
                 _navigationService = navigationService;

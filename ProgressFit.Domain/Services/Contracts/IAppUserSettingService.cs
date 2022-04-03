@@ -13,7 +13,7 @@ namespace ProgressFit.Domain.Services.Contracts
     {
         Task<AppUserSettingResponse> GetAsync(int id);
         Task<List<AppUserSettingResponse>> GetAllAsync();
-        Task<List<AppUserSettingResponse>> FindAsync(Expression<Func<AppUserSetting, bool>> predicate);
+        Task<List<AppUserSettingResponse>> FindAsync(Expression<Func<Setting, bool>> predicate);
         Task<AppUserSettingResponse> AddAsync(CreateAppUserSettingRequest request);
         Task<AppUserSettingResponse> UpdateAsync(AppUserSettingRequest request);
         Task DeleteAsync(int id);

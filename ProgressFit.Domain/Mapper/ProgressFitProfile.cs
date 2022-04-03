@@ -12,7 +12,7 @@ namespace ProgressFit.Domain.Mapper
         public ProgressFitProfile()
         {
                 CreateMap<RegistrationRequest, AppUser>().ReverseMap();
-            CreateMap<CreateAppUserSettingRequest, AppUserSetting>().ReverseMap();
+            CreateMap<CreateAppUserSettingRequest, Setting>().ReverseMap();
         }
        
     }

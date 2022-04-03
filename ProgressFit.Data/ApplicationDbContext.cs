@@ -18,10 +18,10 @@ namespace ProgressFit.Data
             base.OnModelCreating(builder);
         }
 
-        public virtual DbSet<AppUserSetting> AppUserSettings { get; set; }
+        public virtual DbSet<Setting> AppUserSettings { get; set; }
         public virtual DbSet<DailyDiet> DailyDiets { get; set; }
         public virtual DbSet<Diet> Diets { get; set; }
-        public virtual DbSet<AppUserTos> AppUserToss { get; set; }
-        public virtual DbSet<Tos> Toss { get; set; }
+        public virtual DbSet<AppUserTos> AppUserTos { get; set; }
+        public virtual DbSet<Tos> Tos { get; set; }
     }
 }

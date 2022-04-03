@@ -39,7 +39,7 @@ namespace ProgressFit.Identity
                     RequireConsent = false,
                     AllowOfflineAccess = true,
                     AllowedScopes = { IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess
+                        IdentityServerConstants.StandardScopes.Profile, IdentityServerConstants.StandardScopes.OfflineAccess, "progressfit-api"
                     }
                 }
             };

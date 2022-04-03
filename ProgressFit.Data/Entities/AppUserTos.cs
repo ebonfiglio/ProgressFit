@@ -13,6 +13,5 @@ namespace ProgressFit.Data.Entities
         public int TosId { get; set; }
 
         public DateTime Accepted { get; set; }
-
     }
 }

@@ -61,7 +61,7 @@ namespace ProgressFit.API
 
             services.AddAutoMapper(typeof(Startup));
             services.AddLogging();
-            services.AddScoped<IRepository<AppUserSetting>, AppUserSettingRepository>();
+            services.AddScoped<IRepository<Setting>, AppUserSettingRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAppUserSettingService, AppUserSettingService>();
             services.AddScoped<IAuthService, AuthService>();
@@ -72,13 +72,17 @@ namespace ProgressFit.API
             services.AddScoped<IMemoryCache, MemoryCache>();
             services.AddControllers();
 
-            services.AddAuthentication("Bearer")
-               .AddIdentityServerAuthentication(options =>
-               {
-                   options.ApiName = "progressfit-api";
-                   options.Authority = "https://10.0.2.2:5001";
-                   options.RequireHttpsMetadata = false;
-               });
+            services.AddAuthentication()
+               //.AddIdentityServerAuthentication(options =>
+               //{
+               //    options.ApiName = "progressfit-api";
+               //    options.Authority = "https://10.0.2.2:5001";
+               //    options.RequireHttpsMetadata = false;
+               //})
+            .AddJwtBearer("Bearer", options =>
+            {
+                options.Authority = "https://10.0.2.2:5001";
+            });
 
             services.AddSwaggerGen(c =>
             {

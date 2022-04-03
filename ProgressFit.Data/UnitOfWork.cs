@@ -13,7 +13,7 @@ namespace ProgressFit.Data
 
         IRepository<DailyDiet> DailyDietRepository { get; }
 
-        IRepository<AppUserSetting> AppUserSettingRepository { get; }
+        IRepository<Setting> AppUserSettingRepository { get; }
 
         IRepository<Tos> TosRepository { get; }
 
@@ -54,8 +54,8 @@ namespace ProgressFit.Data
             }
         }
 
-        private IRepository<AppUserSetting> appUserSettingRepository;
-        public IRepository<AppUserSetting> AppUserSettingRepository
+        private IRepository<Setting> appUserSettingRepository;
+        public IRepository<Setting> AppUserSettingRepository
         {
             get
             {

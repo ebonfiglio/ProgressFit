@@ -14,9 +14,9 @@ namespace ProgressFit.API.Controllers
     {
         // GET: api/<TosController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public JsonResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
         }
 
         // GET api/<TosController>/5

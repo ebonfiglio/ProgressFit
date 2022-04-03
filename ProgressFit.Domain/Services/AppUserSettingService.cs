@@ -24,7 +24,7 @@ namespace ProgressFit.Domain.Services
         }
         public async Task<AppUserSettingResponse> AddAsync(CreateAppUserSettingRequest request)
         {
-            var entity = _mapper.Map<AppUserSetting>(request);
+            var entity = _mapper.Map<Setting>(request);
             var result = await _unitOfWork.AppUserSettingRepository.Add(entity);
             await _unitOfWork.AppUserSettingRepository.SaveChanges();
             return _mapper.Map<AppUserSettingResponse>(result);
@@ -37,7 +37,7 @@ namespace ProgressFit.Domain.Services
             await _unitOfWork.AppUserSettingRepository.SaveChanges();
         }
 
-        public async Task<List<AppUserSettingResponse>> FindAsync(Expression<Func<AppUserSetting, bool>> predicate)
+        public async Task<List<AppUserSettingResponse>> FindAsync(Expression<Func<Setting, bool>> predicate)
         {
             var entity = await _unitOfWork.AppUserSettingRepository.Find(predicate);
             return _mapper.Map<List<AppUserSettingResponse>>(entity.ToList());

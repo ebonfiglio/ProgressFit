@@ -70,7 +70,7 @@ namespace ProgressFit.API
             services.AddScoped<ITosService, TosService>();
             services.AddScoped<ITokenManager, TokenManager>();
             services.AddScoped<IMemoryCache, MemoryCache>();
-            services.AddControllers();
+            
 
             services.AddAuthentication()
                //.AddIdentityServerAuthentication(options =>
@@ -84,10 +84,23 @@ namespace ProgressFit.API
                 options.Authority = "https://10.0.2.2:5001";
             });
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ApiScope", policy =>
+                {
+                    policy.RequireAuthenticatedUser();
+                    policy.RequireClaim("scope", "progressfit-api");
+                });
+            });
+
+            services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProgressFit.API", Version = "v1" });
             });
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -117,7 +130,8 @@ namespace ProgressFit.API
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllers()
+                .RequireAuthorization("ApiScope");
             });
 
         }

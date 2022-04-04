@@ -9,17 +9,18 @@ using System.Net.Http;
 using IdentityModel.OidcClient.Browser;
 using System.Net.Http.Headers;
 using System.ComponentModel;
+using IdentityModel.Client;
 
 namespace ProgressFit.Mobile.ViewModels
 {
-    public class LoginPageViewModel : ViewModelBase
+    public class LoginPageViewModel : INotifyPropertyChanged// : ViewModelBase
     {
         OidcClient _client;
         LoginResult _result;
 
         Lazy<HttpClient> _apiClient = new Lazy<HttpClient>(() => new HttpClient(DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler()));
 
-        public LoginPageViewModel(INavigationService navigationService) : base(navigationService)
+        public LoginPageViewModel()//INavigationService navigationService) : base(navigationService)
         {
             var browser = DependencyService.Get<IBrowser>();
 
@@ -34,12 +35,14 @@ namespace ProgressFit.Mobile.ViewModels
             };
 
             _client = new OidcClient(options);
-            _apiClient.Value.BaseAddress = new Uri("https://10.0.2.2:5001");
+            _apiClient.Value.BaseAddress = new Uri("https://10.0.2.2:5003");
         }
 
         public ICommand LoginCommand => new Command(OnLogin);
 
         public ICommand RegisterCommand => new Command(OnRegister);
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private async void OnLogin()
         {
@@ -67,16 +70,24 @@ namespace ProgressFit.Mobile.ViewModels
 
         private async void OnRegister()
         {
-            var result = await _apiClient.Value.GetAsync("account/register");
+            //var result = await _apiClient.Value.GetAsync("account/register");
+            var disco = await _apiClient.Value.GetDiscoveryDocumentAsync();
+            var tokenResponse = await _apiClient.Value.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            {
+                Address = disco.TokenEndpoint,
 
-            if (result.IsSuccessStatusCode)
-            {
-                //OutputText.Text = JsonDocument.Parse(await result.Content.ReadAsStringAsync()).RootElement.GetRawText();
-            }
-            else
-            {
-                //OutputText.Text = result.ReasonPhrase;
-            }
+                ClientId = "xamarin",
+                Scope = "progressfit-api"
+            });
+
+            //if (result.IsSuccessStatusCode)
+            //{
+            //    //OutputText.Text = JsonDocument.Parse(await result.Content.ReadAsStringAsync()).RootElement.GetRawText();
+            //}
+            //else
+            //{
+            //    //OutputText.Text = result.ReasonPhrase;
+            //}
         }
     }
 }

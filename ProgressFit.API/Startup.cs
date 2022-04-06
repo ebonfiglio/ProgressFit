@@ -70,19 +70,16 @@ namespace ProgressFit.API
             services.AddScoped<ITosService, TosService>();
             services.AddScoped<ITokenManager, TokenManager>();
             services.AddScoped<IMemoryCache, MemoryCache>();
-            
+
 
             services.AddAuthentication()
-               //.AddIdentityServerAuthentication(options =>
-               //{
-               //    options.ApiName = "progressfit-api";
-               //    options.Authority = "https://10.0.2.2:5001";
-               //    options.RequireHttpsMetadata = false;
-               //})
-            .AddJwtBearer("Bearer", options =>
-            {
-                options.Authority = "https://10.0.2.2:5001";
-            });
+               .AddIdentityServerAuthentication(options =>
+               {
+                   options.ApiName = "progressfit-api";
+                   options.Authority = "https://10.0.2.2:5001";
+                   options.RequireHttpsMetadata = false;
+               });
+
 
             services.AddAuthorization(options =>
             {

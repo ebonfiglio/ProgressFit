@@ -28,14 +28,14 @@ namespace ProgressFit.Mobile.ViewModels
             {
                 Authority = "https://10.0.2.2:5001",
                 ClientId = "xamarin",
-                Scope = "openid profile offline_access",
+                Scope = "openid profile offline_access progressfit-api",
                 RedirectUri = "xamarinformsclients://callback",
                 Browser = browser,
                 BackchannelHandler = DependencyService.Get<IHttpClientHandlerService>().GetInsecureHandler()
             };
 
             _client = new OidcClient(options);
-            _apiClient.Value.BaseAddress = new Uri("https://10.0.2.2:5003");
+            _apiClient.Value.BaseAddress = new Uri("https://10.0.2.2:5001");
         }
 
         public ICommand LoginCommand => new Command(OnLogin);
@@ -72,12 +72,11 @@ namespace ProgressFit.Mobile.ViewModels
         {
             //var result = await _apiClient.Value.GetAsync("account/register");
             var disco = await _apiClient.Value.GetDiscoveryDocumentAsync();
-            var tokenResponse = await _apiClient.Value.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            var tokenResponse = await _apiClient.Value.RequestAuthorizationCodeTokenAsync(new AuthorizationCodeTokenRequest
             {
                 Address = disco.TokenEndpoint,
-
                 ClientId = "xamarin",
-                Scope = "progressfit-api"
+                ClientCredentialStyle = ClientCredentialStyle.AuthorizationHeader
             });
 
             //if (result.IsSuccessStatusCode)

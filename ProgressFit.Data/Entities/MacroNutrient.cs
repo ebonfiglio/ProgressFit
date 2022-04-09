@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Data.Entities
 {
-    public class DietGoal
+    public class MacroNutrient
     {
-        public Guid Id { get; set; }
-        public string DisplayName { get; set; }
 
-        public string Description { get; set; }
+        public Guid Id { get; set; }
+
+        public string FullName { get; set; }
+
+        public string ShortName { get; set; }
+
     }
 }

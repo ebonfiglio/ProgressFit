@@ -15,7 +15,6 @@ namespace ProgressFit.Data.Entities
         [ForeignKey("MultiplerType")]
         public Guid MultiplerTypeId { get; set; }
 
-        [ForeignKey("MultiplerType")]
         public MultiplerType MultiplerType { get; set; }
 
         [ForeignKey("Sex")]

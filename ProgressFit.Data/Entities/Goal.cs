@@ -9,5 +9,8 @@ namespace ProgressFit.Data.Entities
     public class Goal
     {
         public Guid Id { get; set; }
+        public string DisplayName { get; set; }
+
+        public string Description { get; set; }
     }
 }

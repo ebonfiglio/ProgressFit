@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProgressFit.Mobile.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="ProgressFit"
+                SemanticProperties.Description="ProgresFit logo."
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="workoutBtn"
+                Text="Workout"
+                SemanticProperties.Hint="Go to workout center"
+                Clicked="OnWorkoutBtnClicked"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="dietBtn"
+                Text="Diet"
+                SemanticProperties.Hint="Go to diet center"
+                Clicked="OnDietBtnClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

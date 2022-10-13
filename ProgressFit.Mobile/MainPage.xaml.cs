@@ -1,22 +1,14 @@
-﻿namespace ProgressFit.Mobile
+﻿using ProgressFit.Mobile.ViewModels;
+
+namespace ProgressFit.Mobile
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
-        public MainPage()
+        public MainPage(MainPageViewModel viewModel)
         {
+            BindingContext = viewModel;
+
             InitializeComponent();
-        }
-
-        private void OnWorkoutBtnClicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void OnDietBtnClicked(object sender, EventArgs e)
-        {
-
         }
     }
 }

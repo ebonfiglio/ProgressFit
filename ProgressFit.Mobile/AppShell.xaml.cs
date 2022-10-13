@@ -1,4 +1,5 @@
 ﻿using ProgressFit.Mobile.Services.Navigation;
+using ProgressFit.Mobile.Views.Modules.Workout.Main;
 
 namespace ProgressFit.Mobile
 {
@@ -26,7 +27,7 @@ namespace ProgressFit.Mobile
 
         private static void InitializeRouting()
         {
-            //Routing.RegisterRoute("Filter", typeof(FiltersView));
+            Routing.RegisterRoute(nameof(WorkoutMainView), typeof(WorkoutMainView));
             //Routing.RegisterRoute("Basket", typeof(BasketView));
             //Routing.RegisterRoute("Basket", typeof(BasketView));
             //Routing.RegisterRoute("Settings", typeof(SettingsView));

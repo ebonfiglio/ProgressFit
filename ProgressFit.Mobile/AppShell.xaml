@@ -12,8 +12,8 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-        
-        <ShellContent Title="Workout" ContentTemplate="{DataTemplate workout:WorkoutMainPage}" Route="WorkoutMain" />
+
+    <ShellContent Title="Workout" ContentTemplate="{DataTemplate workout:WorkoutMainView}" Route="WorkoutMainView" />
   
 
 </Shell>

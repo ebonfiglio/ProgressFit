@@ -1,8 +1,8 @@
 namespace ProgressFit.Mobile.Views.Modules.Workout.Main;
 
-public partial class WorkoutMainPage : ContentPage
+public partial class WorkoutMainView : ContentPage
 {
-	public WorkoutMainPage(WorkoutMainViewModel viewModel)
+	public WorkoutMainView(WorkoutMainViewModel viewModel)
 	{
         BindingContext = viewModel;
 

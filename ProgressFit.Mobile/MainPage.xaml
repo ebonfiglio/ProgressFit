@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProgressFit.Mobile.MainPage">
+             x:Class="ProgressFit.Mobile.MainPage"
+             xmlns:viewmodel="clr-namespace:ProgressFit.Mobile.ViewModels"
+             x:DataType="viewmodel:MainPageViewModel">
 
     <ScrollView>
         <VerticalStackLayout
@@ -18,13 +20,13 @@
                 x:Name="workoutBtn"
                 Text="Workout"
                 SemanticProperties.Hint="Go to workout center"
-                Clicked="OnWorkoutBtnClicked"
+                Command="{Binding WorkoutBtnClickedCommand}"
                 HorizontalOptions="Center" />
             <Button
                 x:Name="dietBtn"
                 Text="Diet"
                 SemanticProperties.Hint="Go to diet center"
-                Clicked="OnDietBtnClicked"
+               
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>

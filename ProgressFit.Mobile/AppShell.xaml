@@ -4,16 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ProgressFit.Mobile"
-    xmlns:workout="clr-namespace:ProgressFit.Mobile.Views.Modules.Workout.Main"
-    Shell.FlyoutBehavior="Flyout">
+    xmlns:workout="clr-namespace:ProgressFit.Mobile.Pages.Modules.Workout.Main"
+    Shell.FlyoutBehavior="Disabled">
 
-
-        <ShellContent
+    <TabBar>
+        <Tab Title="Home"
+            Icon="cat.png">
+            <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
-    <ShellContent Title="Workout" ContentTemplate="{DataTemplate workout:WorkoutMainView}" Route="WorkoutMainView" />
-  
-
+        </Tab>
+        <Tab Title="Workout"
+            Icon="dog.png">
+            <ShellContent Title="Workout" ContentTemplate="{DataTemplate workout:WorkoutMainPage}" Route="WorkoutMainPage"  />
+        </Tab>
+    </TabBar>
 </Shell>

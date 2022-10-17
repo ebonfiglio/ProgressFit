@@ -1,5 +1,6 @@
 ﻿using ProgressFit.Mobile.Services.Navigation;
-using ProgressFit.Mobile.Views.Modules.Workout.Main;
+using ProgressFit.Mobile.Pages.Modules.Workout.Main;
+using ProgressFit.Mobile.Pages.Modules.Workout.Form;
 
 namespace ProgressFit.Mobile
 {
@@ -27,8 +28,8 @@ namespace ProgressFit.Mobile
 
         private static void InitializeRouting()
         {
-            Routing.RegisterRoute(nameof(WorkoutMainView), typeof(WorkoutMainView));
-            //Routing.RegisterRoute("Basket", typeof(BasketView));
+            Routing.RegisterRoute(nameof(WorkoutMainPage), typeof(WorkoutMainPage));
+            Routing.RegisterRoute(nameof(RoutineFormPage), typeof(RoutineFormPage));
             //Routing.RegisterRoute("Basket", typeof(BasketView));
             //Routing.RegisterRoute("Settings", typeof(SettingsView));
             //Routing.RegisterRoute("OrderDetail", typeof(OrderDetailView));

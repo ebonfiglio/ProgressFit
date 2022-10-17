@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.Input;
-using ProgressFit.Mobile.Views.Modules.Workout.Main;
+using ProgressFit.Mobile.Pages.Modules.Workout.Main;
 
 namespace ProgressFit.Mobile.ViewModels
 {
@@ -19,7 +19,7 @@ namespace ProgressFit.Mobile.ViewModels
         [RelayCommand]
         private async Task OnWorkoutBtnClicked()
         {
-            await NavigationService.NavigateToAsync(nameof(WorkoutMainView));
+            await NavigationService.NavigateToAsync(nameof(WorkoutMainPage));
         }
     }
 }

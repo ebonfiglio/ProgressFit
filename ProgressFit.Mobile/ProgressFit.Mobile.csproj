@@ -59,13 +59,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="View\Modules\Workout\Main\WorkoutMainView.xaml.cs">
-	    <DependentUpon>WorkoutMainView.xaml</DependentUpon>
+	  <Compile Update="Pages\Modules\Workout\Form\RoutineFormPage.xaml.cs">
+	    <DependentUpon>RoutineFormPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Modules\Workout\Main\WorkoutMainPage.xaml.cs">
+	    <DependentUpon>WorkoutMainPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="View\Modules\Workout\Main\WorkoutMainView.xaml">
+	  <MauiXaml Update="Pages\Modules\Workout\Form\RoutineFormPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Modules\Workout\Main\WorkoutMainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

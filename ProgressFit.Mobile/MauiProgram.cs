@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
-using ProgressFit.Mobile.Views.Modules.Workout.Main;
+using ProgressFit.Mobile.Pages.Modules.Workout.Form;
+using ProgressFit.Mobile.Pages.Modules.Workout.Main;
 using ProgressFit.Mobile.Services.Navigation;
 using ProgressFit.Mobile.ViewModels;
 
@@ -28,14 +29,16 @@ namespace ProgressFit.Mobile
         public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder mauiAppBuilder)
         {
             mauiAppBuilder.Services.AddTransient<MainPageViewModel>();
-            mauiAppBuilder.Services.AddTransient<WorkoutMainViewModel>();
+            mauiAppBuilder.Services.AddTransient<WorkoutMainPageModel>();
+            mauiAppBuilder.Services.AddTransient<RoutineFormPageModel>();
             return mauiAppBuilder;
         }
 
         public static MauiAppBuilder RegisterViews(this MauiAppBuilder mauiAppBuilder)
         {
             mauiAppBuilder.Services.AddTransient<MainPage>();
-            mauiAppBuilder.Services.AddTransient<WorkoutMainView>();
+            mauiAppBuilder.Services.AddTransient<WorkoutMainPage>();
+            mauiAppBuilder.Services.AddTransient<RoutineFormPage>();
             return mauiAppBuilder;
         }
 

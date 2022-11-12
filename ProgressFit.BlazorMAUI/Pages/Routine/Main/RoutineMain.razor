@@ -1,0 +1,13 @@
+﻿@page "/RoutineMain"
+@inject NavigationManager _nav
+<div class="flex h-screen">
+    <div class="flex flex-col w-full m-auto">
+        <button class="btn btn-wide w-full btn-primary my-3">Change Routine</button>
+        <button class="btn btn-wide w-full btn-primary my-3">Edit Routine</button>
+        <button class="btn btn-wide w-full btn-primary my-3" @onclick="@(()=>_nav.NavigateTo("/RoutineBuilder"))">New Routine</button>
+    </div>
+</div>
+
+@code {
+
+}

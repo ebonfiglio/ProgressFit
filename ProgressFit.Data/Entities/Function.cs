@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Data.Entities
 {
-    internal class Routine
+    internal class Function
     {
         public Guid Id { get; set; }
-
         public string Name { get; set; }
-
-        public IEnumerable<Workout> Workouts { get; set; }
     }
 }

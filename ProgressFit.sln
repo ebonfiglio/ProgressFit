@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressFit.API", "ProgressFit.API\ProgressFit.API.csproj", "{2DE51306-D007-41EE-9BC3-2200217B5DD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressFit.Web", "ProgressFit.API\ProgressFit.Web.csproj", "{2DE51306-D007-41EE-9BC3-2200217B5DD3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressFit.Data", "ProgressFit.Data\ProgressFit.Data.csproj", "{71AC20A6-3DA7-452F-B6C8-9606065D5746}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressFit.Mobile", "ProgressFit.Mobile\ProgressFit.Mobile.csproj", "{DEBA51F6-C3EE-41B7-B3F9-7149A12B5F4D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressFit.BlazorMAUI", "ProgressFit.BlazorMAUI\ProgressFit.BlazorMAUI.csproj", "{3575565C-AB11-439F-BCDA-6040F63F8B00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAppLib", "MauiAppLib\MauiAppLib.csproj", "{BDAADAAB-FB0E-4171-97A0-23117741F895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,18 @@ Global
 		{3575565C-AB11-439F-BCDA-6040F63F8B00}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{3575565C-AB11-439F-BCDA-6040F63F8B00}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{3575565C-AB11-439F-BCDA-6040F63F8B00}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Release|iPhone.Build.0 = Release|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{BDAADAAB-FB0E-4171-97A0-23117741F895}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

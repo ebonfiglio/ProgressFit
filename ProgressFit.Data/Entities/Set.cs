@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Data.Entities
 {
-    internal class Set
+    public class Set
     {
         public Guid Id { get; set; }
         public int Reps { get; set; }

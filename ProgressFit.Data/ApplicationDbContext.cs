@@ -23,5 +23,21 @@ namespace ProgressFit.Data
         public virtual DbSet<Diet> Diets { get; set; }
         public virtual DbSet<AppUserTos> AppUserTos { get; set; }
         public virtual DbSet<Tos> Tos { get; set; }
+
+        public virtual DbSet<Routine> Routines { get; set; }
+
+        public virtual DbSet<Workout> Workouts { get; set; }
+
+        public virtual DbSet<Exercise> Exercises { get; set; }
+
+        public virtual DbSet<Set> Sets { get; set; }
+
+        public virtual DbSet<Muscle> Muscles { get; set; }
+
+        public virtual DbSet<WorkRate> WorkRates { get; set; }
+
+        public virtual DbSet<Function> Functions { get; set; }
+
+        public virtual DbSet<MuscleWorkRate> MuscleWorkRates { get; set; }
     }
 }

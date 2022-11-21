@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Data.Entities
 {
-    internal class Routine
+    public class Routine
     {
         public Guid Id { get; set; }
 

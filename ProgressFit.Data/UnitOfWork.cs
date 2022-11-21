@@ -17,6 +17,8 @@ namespace ProgressFit.Data
 
         IRepository<Tos> TosRepository { get; }
 
+        IRepository<Routine> RoutineRepository { get; }
+
         Task SaveChanges();
     }
     public class UnitOfWork : IUnitOfWork
@@ -77,6 +79,19 @@ namespace ProgressFit.Data
                     tosRepository = new TosRepository(context);
                 }
                 return tosRepository;
+            }
+        }
+
+        private IRepository<Routine> routineRepository;
+        public IRepository<Routine> RoutineRepository
+        {
+            get
+            {
+                if (routineRepository == null)
+                {
+                    routineRepository = new RoutineRepository(context);
+                }
+                return routineRepository;
             }
         }
 

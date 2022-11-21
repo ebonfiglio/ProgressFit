@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Data.Entities
 {
-    internal class MuscleWorkRate
+    public class MuscleWorkRate
     {
         public Guid Id { get; set; }
 
@@ -17,6 +17,6 @@ namespace ProgressFit.Data.Entities
 
         [ForeignKey("WorkRate")]
         public Guid WorkRateId { get; set; }
-        public Muscle WorkRate { get; set; }
+        public WorkRate WorkRate { get; set; }
     }
 }

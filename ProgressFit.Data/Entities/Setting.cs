@@ -14,7 +14,7 @@ namespace ProgressFit.Data.Entities
         public string FirstName { get; set; }
 
         [ForeignKey("AppUser")]
-        public string AppUserId { get; set; }
+        public Guid AppUserId { get; set; }
 
         public virtual AppUser AppUser { get; set; }
 

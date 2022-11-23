@@ -12,6 +12,6 @@ namespace ProgressFit.Data.Entities
 
         public string Name { get; set; }
 
-        public IEnumerable<Workout> Workouts { get; set; }
+        public virtual IEnumerable<Workout> Workouts { get; set; }
     }
 }

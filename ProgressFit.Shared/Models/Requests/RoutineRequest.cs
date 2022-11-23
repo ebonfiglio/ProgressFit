@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProgressFit.Data.Entities
+namespace ProgressFit.Shared.Models.Requests
 {
-    public class Workout
+    public class RoutineRequest
     {
         public Guid Id { get; set; }
 
         public string Name { get; set; }
 
-        public virtual IEnumerable<Exercise> Exercises { get; set; }
+        public virtual IEnumerable<WorkoutRequest> Workouts { get; set; }
     }
 }

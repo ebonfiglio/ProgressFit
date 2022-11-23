@@ -13,13 +13,13 @@ namespace ProgressFit.Data.Entities
 
         public string Name { get; set; }
 
-        public IEnumerable<Set> Sets { get; set; }
+        public virtual IEnumerable<Set> Sets { get; set; }
 
-        public IEnumerable<MuscleWorkRate> MuscleWorkRates { get; set; }
+        public virtual IEnumerable<MuscleWorkRate> MuscleWorkRates { get; set; }
 
         [ForeignKey("Function")]
         public Guid FunctionId { get; set; }
 
-        public Function Function { get; set; }
+        public virtual Function Function { get; set; }
     }
 }

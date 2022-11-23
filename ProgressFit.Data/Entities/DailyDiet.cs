@@ -10,7 +10,7 @@ namespace ProgressFit.Data.Entities
         public int DailyDietId { get; set; }
 
         [ForeignKey("Diet")]
-        public int DietId { get; set; }
+        public Guid DietId { get; set; }
         public int PfAccountId { get; set; }
         public int DailyCals { get; set; }
         public int DailyProtien { get; set; }

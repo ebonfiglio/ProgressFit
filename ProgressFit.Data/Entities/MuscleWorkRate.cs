@@ -13,10 +13,10 @@ namespace ProgressFit.Data.Entities
 
         [ForeignKey("Muscle")]
         public Guid MuscleId { get; set; }
-        public Muscle Muscle { get; set; }
+        public virtual Muscle Muscle { get; set; }
 
         [ForeignKey("WorkRate")]
         public Guid WorkRateId { get; set; }
-        public WorkRate WorkRate { get; set; }
+        public virtual WorkRate WorkRate { get; set; }
     }
 }

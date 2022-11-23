@@ -22,7 +22,7 @@ namespace ProgressFit.Data.Entities
         public DateTime BirthDay { get; set; }
 
         [ForeignKey("AppUser")]
-        public string AppUserId { get; set; }
+        public Guid AppUserId { get; set; }
 
         public virtual AppUser AppUser { get; set; }
     }

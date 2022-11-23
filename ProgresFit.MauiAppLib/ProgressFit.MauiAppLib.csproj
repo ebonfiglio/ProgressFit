@@ -17,4 +17,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\ProgressFit.Domain\ProgressFit.Domain.csproj" />
+	  <ProjectReference Include="..\ProgressFit.Shared\ProgressFit.Shared.csproj" />
+	</ItemGroup>
+
 </Project>

@@ -14,7 +14,7 @@ namespace ProgressFit.Data.Entities
         public string Name { get; set; }
 
         [ForeignKey("Function")]
-        public string FunctionId { get; set; }
-        public Function Function { get; set; }
+        public Guid FunctionId { get; set; }
+        public virtual Function Function { get; set; }
     }
 }

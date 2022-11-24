@@ -1,4 +1,4 @@
-﻿using ProgressFit.Data.Entities;
+﻿using ProgressFit.Shared.Entities;
 using ProgressFit.Shared.Models.Requests;
 using ProgressFit.Shared.Models.Responses;
 using System;
@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Domain.Services.Contracts
 {
-    public interface IGenericService<T, R, TKey>
+    public interface IGenericService<T, R, TEntity, TKey>
     {
         Task<R> GetAsync(TKey id);
         Task<IEnumerable<R>> GetAllAsync();
-        Task<IEnumerable<R>> FindAsync(Expression<Func<Diet, bool>> predicate);
+        Task<IEnumerable<R>> FindAsync(Expression<Func<TEntity, bool>> predicate);
         Task<R> AddAsync(T request);
         Task<R> UpdateAsync(T request);
         Task DeleteAsync(TKey id);

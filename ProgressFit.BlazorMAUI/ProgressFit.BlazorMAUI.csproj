@@ -74,4 +74,8 @@
       </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ProgressFit.Shared\ProgressFit.Shared.csproj" />
+    </ItemGroup>
+
 </Project>

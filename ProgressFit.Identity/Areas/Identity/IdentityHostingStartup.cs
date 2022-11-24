@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProgressFit.Data;
-using ProgressFit.Data.Entities;
+using ProgressFit.Shared.Entities;
 
 [assembly: HostingStartup(typeof(ProgressFit.Idp.Areas.Identity.IdentityHostingStartup))]
 namespace ProgressFit.Idp.Areas.Identity

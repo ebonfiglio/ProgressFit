@@ -1,4 +1,4 @@
-﻿using ProgressFit.Data.Entities;
+﻿using ProgressFit.Shared.Entities;
 using ProgressFit.Data.Repositories;
 using System;
 using System.Collections.Generic;

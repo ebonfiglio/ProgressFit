@@ -28,7 +28,7 @@ namespace ProgressFit.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Exercise", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Exercise", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace ProgressFit.Data.Migrations
                     b.ToTable("Exercises");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Function", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Function", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +66,7 @@ namespace ProgressFit.Data.Migrations
                     b.ToTable("Functions");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Muscle", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Muscle", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,7 +85,7 @@ namespace ProgressFit.Data.Migrations
                     b.ToTable("Muscles");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.MuscleWorkRate", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.MuscleWorkRate", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -111,7 +111,7 @@ namespace ProgressFit.Data.Migrations
                     b.ToTable("MuscleWorkRates");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Routine", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Routine", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -125,7 +125,7 @@ namespace ProgressFit.Data.Migrations
                     b.ToTable("Routines");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Set", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Set", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -144,7 +144,7 @@ namespace ProgressFit.Data.Migrations
                     b.ToTable("Sets");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.WorkRate", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.WorkRate", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,7 +158,7 @@ namespace ProgressFit.Data.Migrations
                     b.ToTable("WorkRates");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Workout", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Workout", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -177,24 +177,24 @@ namespace ProgressFit.Data.Migrations
                     b.ToTable("Workouts");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Exercise", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Exercise", b =>
                 {
-                    b.HasOne("ProgressFit.Data.Entities.Function", "Function")
+                    b.HasOne("ProgressFit.Shared.Entities.Function", "Function")
                         .WithMany()
                         .HasForeignKey("FunctionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProgressFit.Data.Entities.Workout", null)
+                    b.HasOne("ProgressFit.Shared.Entities.Workout", null)
                         .WithMany("Exercises")
                         .HasForeignKey("WorkoutId");
 
                     b.Navigation("Function");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Muscle", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Muscle", b =>
                 {
-                    b.HasOne("ProgressFit.Data.Entities.Function", "Function")
+                    b.HasOne("ProgressFit.Shared.Entities.Function", "Function")
                         .WithMany()
                         .HasForeignKey("FunctionId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -203,19 +203,19 @@ namespace ProgressFit.Data.Migrations
                     b.Navigation("Function");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.MuscleWorkRate", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.MuscleWorkRate", b =>
                 {
-                    b.HasOne("ProgressFit.Data.Entities.Exercise", null)
+                    b.HasOne("ProgressFit.Shared.Entities.Exercise", null)
                         .WithMany("MuscleWorkRates")
                         .HasForeignKey("ExerciseId");
 
-                    b.HasOne("ProgressFit.Data.Entities.Muscle", "Muscle")
+                    b.HasOne("ProgressFit.Shared.Entities.Muscle", "Muscle")
                         .WithMany()
                         .HasForeignKey("MuscleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProgressFit.Data.Entities.WorkRate", "WorkRate")
+                    b.HasOne("ProgressFit.Shared.Entities.WorkRate", "WorkRate")
                         .WithMany()
                         .HasForeignKey("WorkRateId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -226,33 +226,33 @@ namespace ProgressFit.Data.Migrations
                     b.Navigation("WorkRate");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Set", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Set", b =>
                 {
-                    b.HasOne("ProgressFit.Data.Entities.Exercise", null)
+                    b.HasOne("ProgressFit.Shared.Entities.Exercise", null)
                         .WithMany("Sets")
                         .HasForeignKey("ExerciseId");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Workout", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Workout", b =>
                 {
-                    b.HasOne("ProgressFit.Data.Entities.Routine", null)
+                    b.HasOne("ProgressFit.Shared.Entities.Routine", null)
                         .WithMany("Workouts")
                         .HasForeignKey("RoutineId");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Exercise", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Exercise", b =>
                 {
                     b.Navigation("MuscleWorkRates");
 
                     b.Navigation("Sets");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Routine", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Routine", b =>
                 {
                     b.Navigation("Workouts");
                 });
 
-            modelBuilder.Entity("ProgressFit.Data.Entities.Workout", b =>
+            modelBuilder.Entity("ProgressFit.Shared.Entities.Workout", b =>
                 {
                     b.Navigation("Exercises");
                 });

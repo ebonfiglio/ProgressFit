@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using ProgressFit.Data.Entities;
+using ProgressFit.Shared.Entities;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

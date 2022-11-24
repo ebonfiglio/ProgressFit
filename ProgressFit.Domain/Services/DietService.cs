@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using ProgressFit.Data;
-using ProgressFit.Data.Entities;
+using ProgressFit.Shared.Entities;
 using ProgressFit.Domain.Services.Contracts;
 using ProgressFit.Shared.Models.Requests;
 using ProgressFit.Shared.Models.Responses;

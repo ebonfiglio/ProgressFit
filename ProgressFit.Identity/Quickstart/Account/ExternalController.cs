@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ProgressFit.Data.Entities;
+using ProgressFit.Shared.Entities;
 
 namespace IdentityServerHost.Quickstart.UI
 {

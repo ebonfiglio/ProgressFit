@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProgressFit.Data;
-using ProgressFit.Data.Entities;
+using ProgressFit.Shared.Entities;
 using System;
 
 namespace ProgressFit.Identity

@@ -15,4 +15,8 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ProgressFit.Shared\ProgressFit.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

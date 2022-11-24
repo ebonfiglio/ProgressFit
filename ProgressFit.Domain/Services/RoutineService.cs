@@ -1,4 +1,6 @@
-﻿using ProgressFit.Data.Entities;
+﻿using AutoMapper;
+using ProgressFit.Data;
+using ProgressFit.Shared.Entities;
 using ProgressFit.Domain.Services.Contracts;
 using ProgressFit.Shared.Models.Requests;
 using ProgressFit.Shared.Models.Responses;
@@ -13,9 +15,19 @@ namespace ProgressFit.Domain.Services
 {
     public class RoutineService : IRoutineService
     {
-        public Task<RoutineResponse> AddAsync(RoutineRequest request)
+        IUnitOfWork _unitOfWork;
+        IMapper _mapper;
+        public RoutineService(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
+        }
+        public async Task<RoutineResponse> AddAsync(RoutineRequest request)
+        {
+            Routine entity = _mapper.Map<Routine>(request);
+            Routine result = await _unitOfWork.RoutineRepository.Add(entity);
+            await _unitOfWork.RoutineRepository.SaveChanges();
+            return _mapper.Map<RoutineResponse>(result);
         }
 
         public Task DeleteAsync(Guid id)
@@ -23,7 +35,7 @@ namespace ProgressFit.Domain.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<RoutineResponse>> FindAsync(Expression<Func<Diet, bool>> predicate)
+        public Task<IEnumerable<RoutineResponse>> FindAsync(Expression<Func<Routine, bool>> predicate)
         {
             throw new NotImplementedException();
         }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ProgressFit.Data.Entities;
+using ProgressFit.Shared.Entities;
 using ProgressFit.Shared.Models.Requests;
 using System;
 using System.Collections.Generic;
@@ -11,8 +11,9 @@ namespace ProgressFit.Domain.Mapper
     {
         public ProgressFitProfile()
         {
-                CreateMap<RegistrationRequest, AppUser>().ReverseMap();
+            CreateMap<RegistrationRequest, AppUser>().ReverseMap();
             CreateMap<CreateAppUserSettingRequest, Setting>().ReverseMap();
+            CreateMap<RoutineRequest, Routine>().ReverseMap();
         }
        
     }

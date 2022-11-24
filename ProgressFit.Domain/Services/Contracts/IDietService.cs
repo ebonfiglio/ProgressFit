@@ -1,4 +1,4 @@
-﻿using ProgressFit.Data.Entities;
+﻿using ProgressFit.Shared.Entities;
 using ProgressFit.Shared.Models.Requests;
 using ProgressFit.Shared.Models.Responses;
 using System;

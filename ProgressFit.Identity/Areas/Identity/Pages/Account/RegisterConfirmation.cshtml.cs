@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
-using ProgressFit.Data.Entities;
+using ProgressFit.Shared.Entities;
 
 namespace ProgressFit.Idp.Areas.Identity.Pages.Account
 {

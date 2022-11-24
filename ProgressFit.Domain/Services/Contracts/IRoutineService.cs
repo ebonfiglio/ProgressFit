@@ -1,4 +1,5 @@
-﻿using ProgressFit.Shared.Models.Requests;
+﻿using ProgressFit.Shared.Entities;
+using ProgressFit.Shared.Models.Requests;
 using ProgressFit.Shared.Models.Responses;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.Domain.Services.Contracts
 {
-    public interface IRoutineService : IGenericService<RoutineRequest, RoutineResponse, Guid>
+    public interface IRoutineService : IGenericService<RoutineRequest, RoutineResponse,Routine, Guid>
     {
     }
 }

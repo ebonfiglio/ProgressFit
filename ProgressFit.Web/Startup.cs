@@ -13,7 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ProgressFit.Web.Helpers;
 using ProgressFit.Data;
-using ProgressFit.Data.Entities;
+using ProgressFit.Shared.Entities;
 using ProgressFit.Data.Repositories;
 using System;
 using AutoMapper;

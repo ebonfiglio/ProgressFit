@@ -1,5 +1,6 @@
 ﻿using ProgressFit.Domain.Services;
 using ProgressFit.Domain.Services.Contracts;
+using ProgressFit.MauiAppLib.Endpoints.Routine.Contracts;
 using ProgressFit.Shared.Models.Requests;
 using ProgressFit.Shared.Models.Responses;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ProgressFit.MauiAppLib.Endpoints.Routine
 {
-    public class RoutineEndpoint
+    public class RoutineEndpoint : IRoutineEndpoint
     {
         private readonly IRoutineService _routineService;
         public RoutineEndpoint(IRoutineService routineService)
@@ -19,8 +20,7 @@ namespace ProgressFit.MauiAppLib.Endpoints.Routine
         }
         public async Task<RoutineResponse> Create(RoutineRequest request)
         {
-            RoutineResponse response = new();
-            response = await _routineService.AddAsync(request);
+            RoutineResponse response = await _routineService.AddAsync(request);
             return response;
         }
     }

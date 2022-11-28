@@ -75,6 +75,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ProgresFit.MauiAppLib\ProgressFit.MauiAppLib.csproj" />
       <ProjectReference Include="..\ProgressFit.Shared\ProgressFit.Shared.csproj" />
     </ItemGroup>
 

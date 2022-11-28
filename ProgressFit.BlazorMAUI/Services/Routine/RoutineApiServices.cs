@@ -1,4 +1,5 @@
 ﻿using ProgressFit.BlazorMAUI.Services.Routine.Contracts;
+using ProgressFit.MauiAppLib.Endpoints.Routine.Contracts;
 using ProgressFit.Shared.Models.Requests;
 using ProgressFit.Shared.Models.Responses;
 using System;
@@ -12,9 +13,14 @@ namespace ProgressFit.BlazorMAUI.Services.Routine
 {
     internal class RoutineApiServices : IRoutineApiService
     {
-        public Task<RoutineResponse> AddAsync(RoutineRequest request)
+        IRoutineEndpoint _routineEndpoint;
+        public RoutineApiServices(IRoutineEndpoint routineEndpoint)
         {
-            throw new NotImplementedException();
+            _routineEndpoint = routineEndpoint;
+        }
+        public async Task<RoutineResponse> AddAsync(RoutineRequest request)
+        {
+            return await _routineEndpoint.Create(request);
         }
 
         public Task DeleteAsync(Guid id)

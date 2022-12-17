@@ -38,5 +38,8 @@ namespace ProgressFit.Data
         public virtual DbSet<Function> Functions { get; set; }
 
         public virtual DbSet<MuscleWorkRate> MuscleWorkRates { get; set; }
+
+        public virtual DbSet<Session> Sessions { get; set; }
+        public virtual DbSet<SessionExercise> SessionExercises { get; set; }
     }
 }

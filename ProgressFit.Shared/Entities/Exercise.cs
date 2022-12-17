@@ -13,8 +13,6 @@ namespace ProgressFit.Shared.Entities
 
         public string Name { get; set; }
 
-        public virtual IEnumerable<Set> Sets { get; set; }
-
         public virtual IEnumerable<MuscleWorkRate> MuscleWorkRates { get; set; }
 
         [ForeignKey("Function")]

@@ -41,5 +41,10 @@ namespace ProgressFit.BlazorMAUI.Pages.Routine.Builder
         {
             return await RoutineEndpoint.Create(Routine);
         }
+
+        protected async Task AddWorkout()
+        {
+            Routine.Workouts.Add(new());
+        }
     }
 }

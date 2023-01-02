@@ -1,9 +1,14 @@
 ﻿@page "/RoutineBuilder"
+@using ProgressFit.Shared.Models.Requests;
+@inherits RoutineBuilderViewModel
+
 <input type="text" placeholder="Name" class="input input-bordered input-primary w-full my-1" />
 <div class="divider w-full text-secondary"></div>
 <div class="h-full w-full">
+    @foreach(WorkoutRequest workout in Routine.Workouts)
+    {
     <div role="listitem" class="w-96 h-14 flex justify-between items-center p-4 my-2 rounded-md shadow-md bg-primary text-primary-content last:mb-0">
-        <span class="">Test</span>
+        <span class="">@workout.Name</span>
         <span class="">
             <button class="btn btn-square btn-sm btn-secondary">
                 <span class="oi oi-pencil"></span>
@@ -13,9 +18,10 @@
             </button>
         </span>
     </div>
+    }
     <div class="absolute bottom-20 right-5">
         <button class="btn btn-circle drop-shadow-lg">
-            <span class="oi oi-plus"></span>
+            <span class="oi oi-plus" @onclick="@(()=>_nav.NavigateTo("/RoutineBuilder"))"></span>
         </button>
     </div>
     <button class="btn btn-wide btn-success w-full absolute bottom-2">
@@ -23,6 +29,3 @@
     </button>
 
 </div>
-@code {
-
-}

@@ -10,8 +10,8 @@ namespace ProgressFit.Shared.Models.Requests
     {
         public Guid Id { get; set; }
 
-        public string Name { get; set; }
+        public string Name { get; set; } = "Day 1";
 
-        public virtual IEnumerable<WorkoutRequest> Workouts { get; set; }
+        public virtual List<WorkoutRequest> Workouts { get; set; } = new List<WorkoutRequest>();
     }
 }
